@@ -1,0 +1,208 @@
+/usr/lib/python2.7/dist-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+
+CRITICAL:tensorflow:Optional Python module cv2 not found, please install cv2 and retry if the application fails.
+
+CRITICAL:tensorflow:Optional Python module skimage.io not found, please install skimage.io and retry if the application fails.
+CRITICAL:tensorflow:Optional Python module SimpleITK not found, please install SimpleITK and retry if the application fails.
+
+INFO:niftynet: Optional Python module yaml not found, please install yaml and retry if the application fails.
+INFO:niftynet: Optional Python module yaml version None not found, please install yaml-None and retry if the application fails.
+
+INFO:niftynet: Optional Python module SimpleITK not found, please install SimpleITK and retry if the application fails.
+INFO:niftynet: Optional Python module SimpleITK version None not found, please install SimpleITK-None and retry if the application fails.
+
+NiftyNet version 0.5.0
+INFO:niftynet: Optional Python module yaml not found, please install yaml and retry if the application fails.
+INFO:niftynet: Optional Python module yaml version None not found, please install yaml-None and retry if the application fails.
+
+INFO:niftynet: Resolving label.csv as /opt/deepsirius/niftynet/label.csv
+
+INFO:niftynet: Resolving data.csv as /opt/deepsirius/niftynet/data.csv
+[CONFIG_FILE]
+-- path: /opt/deepsirius/niftynet/extensions/config.ini
+[LABEL]
+-- spatial_window_size: (64, 64, 64)
+-- pixdim: ()
+-- csv_file: /opt/deepsirius/niftynet/label.csv
+-- axcodes: ()
+-- loader: None
+-- filename_contains: None
+-- filename_not_contains: ()
+-- filename_removefromid: 
+-- interp_order: 0
+[DATA]
+-- spatial_window_size: (64, 64, 64)
+-- pixdim: ()
+-- csv_file: /opt/deepsirius/niftynet/data.csv
+-- axcodes: ()
+-- loader: None
+-- filename_contains: None
+-- filename_not_contains: ()
+-- filename_removefromid: 
+-- interp_order: 3
+[CUSTOM]
+-- proba_connect: True
+-- min_numb_labels: 1
+-- weight: ()
+-- compulsory_labels: (0, 1)
+-- min_sampling_ratio: 0
+-- rand_samples: 0
+-- inferred: ()
+-- output_prob: True
+-- softmax: True
+-- evaluation_units: foreground
+-- sampler: ()
+-- label_normalisation: False
+-- label: (u'label',)
+-- image: (u'data',)
+-- num_classes: 2
+-- name: net_segment
+[TRAINING]
+-- sample_per_volume: 100
+-- validation_max_iter: 1
+-- max_checkpoints: 20
+-- do_elastic_deformation: False
+-- vars_to_restore: 
+-- tensorboard_every_n: 20
+-- save_every_n: 1000
+-- deformation_sigma: 15
+-- optimiser: adam
+-- lr: 0.0001
+-- rotation_angle_z: ()
+-- rotation_angle_y: ()
+-- rotation_angle_x: ()
+-- scaling_percentage: ()
+-- starting_iter: 0
+-- rotation_angle: ()
+-- loss_type: CrossEntropy
+-- exclude_fraction_for_validation: 0.0
+-- vars_to_freeze: 
+-- max_iter: 100
+-- bias_field_range: ()
+-- bf_order: 3
+-- exclude_fraction_for_inference: 0.0
+-- num_ctrl_points: 4
+-- antialiasing: True
+-- proportion_to_deform: 0.5
+-- random_flipping_axes: -1
+-- validation_every_n: -1
+[NETWORK]
+-- cutoff: (0.01, 0.99)
+-- multimod_foreground_type: and
+-- volume_padding_size: (32, 32, 32)
+-- weight_initializer: he_normal
+-- name: vnet
+-- decay: 1e-05
+-- activation_function: relu
+-- normalise_foreground_only: False
+-- histogram_ref_file: ./example_volumes/monomodal_parcellation/standardisation_models.txt
+-- batch_size: 32
+-- norm_type: percentile
+-- foreground_type: otsu_plus
+-- smaller_final_batch_mode: pad
+-- window_sampling: uniform
+-- whitening: False
+-- reg_type: L2
+-- bias_initializer: zeros
+-- normalisation: False
+-- queue_length: 30
+-- volume_padding_mode: minimum
+-- keep_prob: 1.0
+[INFERENCE]
+-- output_interp_order: 0
+-- spatial_window_size: (64, 64, 64)
+-- dataset_to_infer: 
+-- border: (10, 10, 10)
+-- save_seg_dir: ./output/
+-- output_postfix: _niftynet_out
+-- inference_iter: -1
+[SYSTEM]
+-- cuda_devices: 
+-- num_gpus: 4
+-- num_threads: 100
+-- iteration_generator: iteration_generator
+-- event_handler: (u'model_saver', u'model_restorer', u'sampler_threading', u'apply_gradients', u'output_interpreter', u'console_logger', u'tensorboard_logger')
+-- dataset_split_file: ./dataset_split.csv
+-- model_dir: /opt/deepsirius/niftynet/models/model_vnet
+-- action: training
+INFO:niftynet: starting segmentation application
+INFO:niftynet: [data] using existing csv file /opt/deepsirius/niftynet/data.csv, skipped filenames search
+
+INFO:niftynet: [label] using existing csv file /opt/deepsirius/niftynet/label.csv, skipped filenames search
+
+INFO:niftynet: 
+
+Number of subjects 100, input section names: ['subject_id', 'data', 'label']
+-- using all subjects (without data partitioning).
+
+
+reading datasets headers |----------| 0.0% reading datasets headers |----------| 1.0% reading datasets headers |----------| 2.0% reading datasets headers |----------| 3.0% reading datasets headers |----------| 4.0% reading datasets headers |----------| 5.0% reading datasets headers |----------| 6.0% reading datasets headers |----------| 7.0% reading datasets headers |----------| 8.0% reading datasets headers |----------| 9.0% reading datasets headers |*---------| 10.0% reading datasets headers |*---------| 11.0% reading datasets headers |*---------| 12.0% reading datasets headers |*---------| 13.0% reading datasets headers |*---------| 14.0% reading datasets headers |*---------| 15.0% reading datasets headers |*---------| 16.0% reading datasets headers |*---------| 17.0% reading datasets headers |*---------| 18.0% reading datasets headers |*---------| 19.0% reading datasets headers |**--------| 20.0% reading datasets headers |**--------| 21.0% reading datasets headers |**--------| 22.0% reading datasets headers |**--------| 23.0% reading datasets headers |**--------| 24.0% reading datasets headers |**--------| 25.0% reading datasets headers |**--------| 26.0% reading datasets headers |**--------| 27.0% reading datasets headers |**--------| 28.0% reading datasets headers |**--------| 29.0% reading datasets headers |***-------| 30.0% reading datasets headers |***-------| 31.0% reading datasets headers |***-------| 32.0% reading datasets headers |***-------| 33.0% reading datasets headers |***-------| 34.0% reading datasets headers |***-------| 35.0% reading datasets headers |***-------| 36.0% reading datasets headers |***-------| 37.0% reading datasets headers |***-------| 38.0% reading datasets headers |***-------| 39.0% reading datasets headers |****------| 40.0% reading datasets headers |****------| 41.0% reading datasets headers |****------| 42.0% reading datasets headers |****------| 43.0% reading datasets headers |****------| 44.0% reading datasets headers |****------| 45.0% reading datasets headers |****------| 46.0% reading datasets headers |****------| 47.0% reading datasets headers |****------| 48.0% reading datasets headers |****------| 49.0% reading datasets headers |*****-----| 50.0% reading datasets headers |*****-----| 51.0% reading datasets headers |*****-----| 52.0% reading datasets headers |*****-----| 53.0% reading datasets headers |*****-----| 54.0% reading datasets headers |*****-----| 55.0% reading datasets headers |*****-----| 56.0% reading datasets headers |*****-----| 57.0% reading datasets headers |*****-----| 58.0% reading datasets headers |*****-----| 59.0% reading datasets headers |******----| 60.0% reading datasets headers |******----| 61.0% reading datasets headers |******----| 62.0% reading datasets headers |******----| 63.0% reading datasets headers |******----| 64.0% reading datasets headers |******----| 65.0% reading datasets headers |******----| 66.0% reading datasets headers |******----| 67.0% reading datasets headers |******----| 68.0% reading datasets headers |******----| 69.0% reading datasets headers |*******---| 70.0% reading datasets headers |*******---| 71.0% reading datasets headers |*******---| 72.0% reading datasets headers |*******---| 73.0% reading datasets headers |*******---| 74.0% reading datasets headers |*******---| 75.0% reading datasets headers |*******---| 76.0% reading datasets headers |*******---| 77.0% reading datasets headers |*******---| 78.0% reading datasets headers |*******---| 79.0% reading datasets headers |********--| 80.0% reading datasets headers |********--| 81.0% reading datasets headers |********--| 82.0% reading datasets headers |********--| 83.0% reading datasets headers |********--| 84.0% reading datasets headers |********--| 85.0% reading datasets headers |********--| 86.0% reading datasets headers |********--| 87.0% reading datasets headers |********--| 88.0% reading datasets headers |********--| 89.0% reading datasets headers |*********-| 90.0% reading datasets headers |*********-| 91.0% reading datasets headers |*********-| 92.0% reading datasets headers |*********-| 93.0% reading datasets headers |*********-| 94.0% reading datasets headers |*********-| 95.0% reading datasets headers |*********-| 96.0% reading datasets headers |*********-| 97.0% reading datasets headers |*********-| 98.0% reading datasets headers |*********-| 99.0% INFO:niftynet: Image reader: loading 100 subjects from sections (u'data',) as input [image]
+INFO:niftynet: Image reader: loading 100 subjects from sections (u'label',) as input [label]
+
+2019-06-03 18:41:48.871992: E tensorflow/stream_executor/cuda/cuda_driver.cc:300] failed call to cuInit: UNKNOWN ERROR (-1)
+2019-06-03 18:41:48.872030: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:163] retrieving CUDA diagnostic information for host: 6eee7665e08d
+2019-06-03 18:41:48.872041: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:170] hostname: 6eee7665e08d
+
+2019-06-03 18:41:48.872178: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:194] libcuda reported version is: Not found: was unable to find libcuda.so DSO loaded into this program
+
+2019-06-03 18:41:48.872223: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:198] kernel reported version is: 418.67.0
+
+WARNING:niftynet: sampler queue_length should be larger than batch_size, defaulting to batch_size * 5.0 (160).
+
+INFO:niftynet: initialised uniform sampler {'image_location': (100, 7), 'image': (100, 64, 64, 64, 1, 1), 'label_location': (100, 7), 'label': (100, 64, 64, 64, 1, 1)} 
+
+WARNING:niftynet: From /usr/local/lib/python2.7/dist-packages/niftynet/engine/application_initializer.py:106: calling __init__ (from tensorflow.python.ops.init_ops) with distribution=normal is deprecated and will be removed in a future version.
+Instructions for updating:
+`normal` is a deprecated alias for `truncated_normal`
+
+INFO:niftynet: using VNet
+
+INFO:niftynet: Initialising Dataset from 100 subjects...
+
+[Layer] VNet/L1 (input undecided) [Trainable] conv_0/w, downsample/w, downsample/b (6128)
+[Layer] VNet/L2 (input undecided) [Trainable] conv_0/w, conv_1/w, downsample/w, downsample/b (272448)
+[Layer] VNet/L3 (input undecided) [Trainable] conv_0/w, conv_1/w, conv_2/w, downsample/w, downsample/b (1601664)
+[Layer] VNet/L4 (input undecided) [Trainable] conv_0/w, conv_1/w, conv_2/w, downsample/w, downsample/b (6406400)
+[Layer] VNet/V_ (input undecided) [Trainable] conv_0/w, conv_1/w, conv_2/w, upsample/w, upsample/b (25100544)
+[Layer] VNet/R4 (input undecided) [Trainable] conv_0/w, conv_1/w, conv_2/w, upsample/w, upsample/b (28934272)
+[Layer] VNet/R3 (input undecided) [Trainable] conv_0/w, conv_1/w, conv_2/w, upsample/w, upsample/b (7233600)
+[Layer] VNet/R2 (input undecided) [Trainable] conv_0/w, conv_1/w, upsample/w, upsample/b (1296416)
+[Layer] VNet/R1 (input undecided) [Trainable] conv_0/w, conv_1x1x1/w, conv_1x1x1/b (192066)
+INFO:niftynet: Cross entropy loss function calls tf.nn.sparse_softmax_cross_entropy_with_logits which always performs a softmax internally.
+
+[Layer] VNet/L1 (input undecided) [Trainable] conv_0/w, downsample/w, downsample/b (6128)
+[Layer] VNet/L2 (input undecided) [Trainable] conv_0/w, conv_1/w, downsample/w, downsample/b (272448)
+[Layer] VNet/L3 (input undecided) [Trainable] conv_0/w, conv_1/w, conv_2/w, downsample/w, downsample/b (1601664)
+[Layer] VNet/L4 (input undecided) [Trainable] conv_0/w, conv_1/w, conv_2/w, downsample/w, downsample/b (6406400)
+[Layer] VNet/V_ (input undecided) [Trainable] conv_0/w, conv_1/w, conv_2/w, upsample/w, upsample/b (25100544)
+[Layer] VNet/R4 (input undecided) [Trainable] conv_0/w, conv_1/w, conv_2/w, upsample/w, upsample/b (28934272)
+[Layer] VNet/R3 (input undecided) [Trainable] conv_0/w, conv_1/w, conv_2/w, upsample/w, upsample/b (7233600)
+[Layer] VNet/R2 (input undecided) [Trainable] conv_0/w, conv_1/w, upsample/w, upsample/b (1296416)
+[Layer] VNet/R1 (input undecided) [Trainable] conv_0/w, conv_1x1x1/w, conv_1x1x1/b (192066)
+INFO:niftynet: Cross entropy loss function calls tf.nn.sparse_softmax_cross_entropy_with_logits which always performs a softmax internally.
+
+[Layer] VNet/L1 (input undecided) [Trainable] conv_0/w, downsample/w, downsample/b (6128)
+[Layer] VNet/L2 (input undecided) [Trainable] conv_0/w, conv_1/w, downsample/w, downsample/b (272448)
+[Layer] VNet/L3 (input undecided) [Trainable] conv_0/w, conv_1/w, conv_2/w, downsample/w, downsample/b (1601664)
+[Layer] VNet/L4 (input undecided) [Trainable] conv_0/w, conv_1/w, conv_2/w, downsample/w, downsample/b (6406400)
+[Layer] VNet/V_ (input undecided) [Trainable] conv_0/w, conv_1/w, conv_2/w, upsample/w, upsample/b (25100544)
+[Layer] VNet/R4 (input undecided) [Trainable] conv_0/w, conv_1/w, conv_2/w, upsample/w, upsample/b (28934272)
+[Layer] VNet/R3 (input undecided) [Trainable] conv_0/w, conv_1/w, conv_2/w, upsample/w, upsample/b (7233600)
+[Layer] VNet/R2 (input undecided) [Trainable] conv_0/w, conv_1/w, upsample/w, upsample/b (1296416)
+[Layer] VNet/R1 (input undecided) [Trainable] conv_0/w, conv_1x1x1/w, conv_1x1x1/b (192066)
+INFO:niftynet: Cross entropy loss function calls tf.nn.sparse_softmax_cross_entropy_with_logits which always performs a softmax internally.
+
+[Layer] VNet/L1 (input undecided) [Trainable] conv_0/w, downsample/w, downsample/b (6128)
+[Layer] VNet/L2 (input undecided) [Trainable] conv_0/w, conv_1/w, downsample/w, downsample/b (272448)
+[Layer] VNet/L3 (input undecided) [Trainable] conv_0/w, conv_1/w, conv_2/w, downsample/w, downsample/b (1601664)
+[Layer] VNet/L4 (input undecided) [Trainable] conv_0/w, conv_1/w, conv_2/w, downsample/w, downsample/b (6406400)
+[Layer] VNet/V_ (input undecided) [Trainable] conv_0/w, conv_1/w, conv_2/w, upsample/w, upsample/b (25100544)
+[Layer] VNet/R4 (input undecided) [Trainable] conv_0/w, conv_1/w, conv_2/w, upsample/w, upsample/b (28934272)
+[Layer] VNet/R3 (input undecided) [Trainable] conv_0/w, conv_1/w, conv_2/w, upsample/w, upsample/b (7233600)
+[Layer] VNet/R2 (input undecided) [Trainable] conv_0/w, conv_1/w, upsample/w, upsample/b (1296416)
+[Layer] VNet/R1 (input undecided) [Trainable] conv_0/w, conv_1x1x1/w, conv_1x1x1/b (192066)
+INFO:niftynet: Cross entropy loss function calls tf.nn.sparse_softmax_cross_entropy_with_logits which always performs a softmax internally.
+
+INFO:niftynet: Parameters from random initialisations ...
+
