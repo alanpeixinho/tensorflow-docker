@@ -1,5 +1,3 @@
-wget https://github.com/bazelbuild/bazel/releases/download/0.15.0/bazel-0.15.0-dist.zip
-unzip bazel-0.15.0-dist.zip
-env EXTRA_BAZEL_ARGS="--host_javabase=@local_jdk//:jdk" bash ./compile.sh
-mv ./output/bazel /usr/local/bin/
-rm -rf /opt/bazel
+wget https://github.com/bazelbuild/bazel/releases/download/2.0.0/bazel-2.0.0-linux-x86_64
+mv bazel-2.0.0-linux-x86_64 /usr/bin/bazel
+chmod +x /usr/bin/bazel
